@@ -1,4 +1,4 @@
-<h2>Данные о героях</h2>
+<h2 appPinkSize >{{'Данные о героях' | camelCase}}</h2>
 <ul class="heroes">
   <li *ngFor="let hero of heroes" >
     <button type="button" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
@@ -9,6 +9,8 @@
   </li>
 </ul>
 
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
 <app-hero-detail [hero]="selectedHero"></app-hero-detail>
 
 
