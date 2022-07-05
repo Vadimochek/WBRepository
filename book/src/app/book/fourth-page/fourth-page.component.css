@@ -1,0 +1,19 @@
+.fourthPage-content {
+  padding: 24px 40px 0 40px;
+  display: grid;
+  grid-template-areas:
+    "main main"
+    "second image";
+}
+
+.image-container{
+  padding-top: 24px;
+}
+
+.main-container{
+  padding-left: 0;
+}
+
+.second-container{
+  padding-right: 24px;
+}

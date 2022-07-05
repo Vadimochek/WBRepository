@@ -1,0 +1,72 @@
+
+.firstPage-content {
+  padding: 24px 40px 0 40px;
+  display: grid;
+  grid-template-areas:
+    "image main"
+    "second second";
+}
+
+.main-container {
+  grid-area: main;
+  padding-left: 24px;
+}
+
+.main-header {
+  font-family: 'Segoe UI', serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  /* identical to box height, or 133% */
+  padding-bottom: 16px;
+
+
+  color: #000000;
+
+}
+
+.main-text {
+  font-family: 'Segoe UI';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  /* or 143% */
+
+
+}
+
+.image-container {
+  grid-area: image;
+}
+
+.image {
+  width: 238px;
+  height: 216px;
+  border-radius: 16px;
+}
+
+.second-container {
+  grid-area: second;
+  padding-top: 24px;
+}
+
+.secondary-header {
+  font-family: 'Segoe UI';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  /* identical to box height, or 133% */
+
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 12px;
+  color: #000000;
+}
+
+.main-text p {
+  padding: 12px 0 0 0;
+  margin: 0;
+}

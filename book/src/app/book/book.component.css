@@ -1,0 +1,27 @@
+.book-page{
+  width: 842px;
+  background: #efeaea;
+  display: grid;
+  gap: 0;
+  grid-template-areas:
+    "header header"
+    "content content"
+    "content content"
+    "pagination pagination";
+  grid-template-rows: auto 1fr 1fr auto;
+
+}
+
+.book-content{
+  grid-area: content
+}
+
+.header{
+  grid-area: header;
+  height: 60px;
+}
+.pagination-footer{
+  text-align: center;
+  grid-area: pagination
+}
+

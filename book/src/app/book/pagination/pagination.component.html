@@ -1,0 +1,9 @@
+<div class="paginate">
+  <ul class="pagination">
+    <li class="pagination-button"
+        *ngFor="let page of ListArray"
+        >
+      <a (click)="changePage(page)" [class.active]="currentPage == page" href="#">{{page}}</a>
+    </li>
+  </ul>
+</div>

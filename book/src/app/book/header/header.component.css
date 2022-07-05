@@ -1,0 +1,11 @@
+.book-header{
+  border-bottom: 1px solid #D8D8D8;
+  padding-bottom: 0
+}
+
+.header-image {
+  width: 118px;
+  height: 26px;
+  padding: 16px 0 18px 40px;
+}
+
