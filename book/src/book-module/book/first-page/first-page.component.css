@@ -42,9 +42,14 @@
 }
 
 .image {
+  object-fit: cover;
   width: 238px;
   height: 216px;
   border-radius: 16px;
+  filter: brightness(0.4);
+}
+.image:hover{
+  filter: none;
 }
 
 .second-container {

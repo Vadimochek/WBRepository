@@ -7,7 +7,7 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 })
 export class PaginationComponent implements OnInit {
 
-  ListArray: number[] = [1, 2, 3, 4, 5]
+  listArray: number[] = [1, 2, 3, 4, 5]
   currentPage: number = 1
   @Output() getPage = new EventEmitter<number>();
   change(page: number) {
