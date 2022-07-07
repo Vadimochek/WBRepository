@@ -3,7 +3,10 @@
     <li class="pagination-button"
         *ngFor="let page of listArray"
         >
-      <a (click)="changePage(page)" [class.active]="currentPage == page" href="#">{{page}}</a>
+      <a [routerLink]="['book/pages/',page]" routerLinkActive="active"
+      >{{page}}
+      </a>
     </li>
   </ul>
 </div>
+<!--(click)="changePage(page)"-->

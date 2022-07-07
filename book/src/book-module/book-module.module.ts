@@ -8,8 +8,24 @@ import {SecondPageComponent} from "./book/second-page/second-page.component";
 import {ThirdPageComponent} from "./book/third-page/third-page.component";
 import {FourthPageComponent} from "./book/fourth-page/fourth-page.component";
 import {FifthPageComponent} from "./book/fifth-page/fifth-page.component";
+import {RouterModule, Routes} from "@angular/router";
+import {NotFoundComponent} from "./book/not-found/not-found.component";
 
 
+const routes: Routes = [
+  { path: 'book',
+  children: [
+  { path: 'pages', children: [
+      { path: '1', component: FirstPageComponent },
+      { path: '2', component: SecondPageComponent },
+      { path: '3', component: ThirdPageComponent },
+      { path: '4', component: FourthPageComponent },
+      { path: '5', component: FifthPageComponent }
+    ]},
+    {path: '**', component: NotFoundComponent}
+  ]},
+  {path: '**', component: NotFoundComponent}
+]
 
 @NgModule({
   declarations: [
@@ -20,10 +36,12 @@ import {FifthPageComponent} from "./book/fifth-page/fifth-page.component";
     SecondPageComponent,
     ThirdPageComponent,
     FourthPageComponent,
-    FifthPageComponent
+    FifthPageComponent,
+    NotFoundComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    [RouterModule.forRoot(routes)],
   ],
   exports: [
     BookComponent,
@@ -33,9 +51,12 @@ import {FifthPageComponent} from "./book/fifth-page/fifth-page.component";
     SecondPageComponent,
     ThirdPageComponent,
     FourthPageComponent,
-    FifthPageComponent
+    FifthPageComponent,
+    RouterModule
   ],
   bootstrap: [BookComponent]
 
 })
+
+
 export class BookModuleModule { }

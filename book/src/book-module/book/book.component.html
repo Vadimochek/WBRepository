@@ -1,11 +1,8 @@
 <div class="book-page">
   <app-header class="header"></app-header>
-  <div class="book-content" [ngSwitch]=pageNumber>
-    <app-first-page *ngSwitchCase="1"></app-first-page>
-    <app-second-page *ngSwitchCase="2"></app-second-page>
-    <app-third-page *ngSwitchCase="3"></app-third-page>
-    <app-fourth-page *ngSwitchCase="4"></app-fourth-page>
-    <app-fifth-page *ngSwitchCase="5"></app-fifth-page>
+  <div class="book-content" >
+    <router-outlet></router-outlet>
   </div>
-  <app-pagination class="pagination-footer" (getPage)="getPage($event) " ></app-pagination>
+  <app-pagination class="pagination-footer"  ></app-pagination>
 </div>
+

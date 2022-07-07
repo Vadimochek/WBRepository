@@ -1,0 +1,83 @@
+.error-container{
+  background: #efeaea;
+}
+
+.green-shape{
+  width: 515.8px;
+  height: 361.12px;
+  background: #5DAB5D;
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+.blue-circle{
+  width: 124px;
+  height: 131px;
+  border-radius: 50%;
+  background: #8C65A5;
+}
+.orange-circle{
+  width: 64px;
+  height: 68px;
+  border-radius: 50%;
+  background: #F56849;
+}
+.violet-circle{
+  width: 124px;
+  height: 131px;
+  border-radius: 50%;
+  background: #8C65A5;
+}
+.red-circle{
+  width: 168px;
+  height: 154px;
+  background: #F28383;
+  border-radius: 50%;
+}
+.head-error{
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 56px;
+  padding-top: 10px;
+}
+
+.info-error{
+  text-align: center;
+  padding-top: 80px;
+}
+.number-error{
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 144px;
+  line-height: 169px;
+
+  color: #000000;
+}
+.text-error{
+  padding-top: 20px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 22px;
+
+  color: #201F1F;
+}
+
+.back-button-block{
+  padding-top: 60px;
+}
+.back-button{
+  width: 295.24px;
+  height: 72px;
+  background: #5FCEF1;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 25px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 35px;
+  color: #4E1D1D;
+}
