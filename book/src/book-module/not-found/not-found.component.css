@@ -25,7 +25,7 @@
   left: 980px;
   top: 0;
   z-index: 0;
-  background-image: url("../../../assets/background_shape/RightWave.png")
+  background-image: url("../../assets/background_shape/RightWave.png")
 }
 .orange-circle{
   position: absolute;
@@ -33,7 +33,7 @@
   top: 718px;
   width: 52px;
   height: 52px;
-  background-image: url("../../../assets/background_shape/Ellipse 4.png") ;
+  background-image: url("../../assets/background_shape/Ellipse 4.png") ;
 }
 .violet-circle{
   position: absolute;

@@ -1,7 +1,7 @@
 <div class="paginate">
   <ul class="pagination">
     <li class="pagination-button"
-        *ngFor="let page of listArray"
+        *ngFor="let page of pageArray"
         >
       <a [routerLink]="['pages/',page]" routerLinkActive="active"
       >{{page}}
