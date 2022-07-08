@@ -10,20 +10,21 @@ import {FourthPageComponent} from "./book/fourth-page/fourth-page.component";
 import {FifthPageComponent} from "./book/fifth-page/fifth-page.component";
 import {RouterModule, Routes} from "@angular/router";
 import {NotFoundComponent} from "./book/not-found/not-found.component";
+import {RouterComponent} from "./router.component";
 
 
 const routes: Routes = [
-  { path: 'book',
+  { path: 'book', component: BookComponent,
   children: [
   { path: 'pages', children: [
-      { path: '1', component: FirstPageComponent },
-      { path: '2', component: SecondPageComponent },
-      { path: '3', component: ThirdPageComponent },
-      { path: '4', component: FourthPageComponent },
-      { path: '5', component: FifthPageComponent }
+      { path: '1',  component: FirstPageComponent, pathMatch: "full"},
+      { path: '2', component: SecondPageComponent, pathMatch: "full" },
+      { path: '3', component: ThirdPageComponent, pathMatch: "full" },
+      { path: '4', component: FourthPageComponent, pathMatch: "full" },
+      { path: '5', component: FifthPageComponent, pathMatch: "full" },
     ]},
-    {path: '**', component: NotFoundComponent}
   ]},
+  {path: '', redirectTo: 'book/pages/1', pathMatch: "full"},
   {path: '**', component: NotFoundComponent}
 ]
 
@@ -37,7 +38,8 @@ const routes: Routes = [
     ThirdPageComponent,
     FourthPageComponent,
     FifthPageComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    RouterComponent
   ],
   imports: [
     CommonModule,
@@ -52,9 +54,10 @@ const routes: Routes = [
     ThirdPageComponent,
     FourthPageComponent,
     FifthPageComponent,
-    RouterModule
+    RouterModule,
+    RouterComponent
   ],
-  bootstrap: [BookComponent]
+  bootstrap: [RouterComponent]
 
 })
 

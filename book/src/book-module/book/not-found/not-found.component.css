@@ -1,36 +1,58 @@
 .error-container{
-  background: #efeaea;
+  background: #ffffff;
+  width: 1365px;
+  height: 843px;
+  position: absolute;
+  z-index: 3;
 }
 
-.green-shape{
-  width: 515.8px;
-  height: 361.12px;
-  background: #5DAB5D;
-  transform: matrix(-1, 0, 0, 1, 0, 0);
-}
+
+
 .blue-circle{
+  position: absolute;
   width: 124px;
   height: 131px;
+  left: -40px;
+  top: -40px;
   border-radius: 50%;
-  background: #8C65A5;
+  background: #5FCEF1;
+  z-index: 0;
+}
+.green-shape{
+  position: absolute;
+  width: 515px;
+  height: 361px;
+  left: 980px;
+  top: 0;
+  z-index: 0;
+  background-image: url("../../../assets/background_shape/RightWave.png")
 }
 .orange-circle{
-  width: 64px;
-  height: 68px;
-  border-radius: 50%;
-  background: #F56849;
+  position: absolute;
+  left: 0px;
+  top: 718px;
+  width: 52px;
+  height: 52px;
+  background-image: url("../../../assets/background_shape/Ellipse 4.png") ;
 }
 .violet-circle{
+  position: absolute;
   width: 124px;
   height: 131px;
+  left: 1200px;
+  top: 155px;
   border-radius: 50%;
   background: #8C65A5;
 }
 .red-circle{
+  position: absolute;
   width: 168px;
   height: 154px;
+  top: 220px;
+  left: 535px;
   background: #F28383;
   border-radius: 50%;
+  z-index: -1;
 }
 .head-error{
   font-family: 'Roboto';
@@ -46,6 +68,7 @@
   padding-top: 80px;
 }
 .number-error{
+  padding-top: 140px;
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
