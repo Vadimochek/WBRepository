@@ -1,4 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {pageRoutes} from "../../routes";
 
 @Component({
   selector: 'app-pagination',
@@ -7,22 +8,18 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 })
 export class PaginationComponent implements OnInit {
 
-  pageArray: number[] = [1, 2, 3, 4, 5]
-  currentPage: number = 1
+  pageArray;
   @Output() getPage = new EventEmitter<number>();
   change(page: number) {
     this.getPage.emit(page)
+
   }
 
   constructor() {
+    this.pageArray = pageRoutes
   }
 
   ngOnInit(): void {
-  }
-
-  changePage(page: number): void {
-    this.currentPage = page;
-    this.getPage.emit(page)
   }
 
 }

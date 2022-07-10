@@ -1,5 +1,5 @@
 .book-header{
-  border-bottom: 1px solid #ffffff;
+  border-bottom: 1px solid #cbcaca;
   padding-bottom: 0
 }
 
@@ -7,5 +7,6 @@
   width: 118px;
   height: 26px;
   padding: 16px 0 18px 40px;
+  object-fit: fill;
 }
 

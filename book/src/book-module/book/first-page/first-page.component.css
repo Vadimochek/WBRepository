@@ -18,10 +18,7 @@
   font-weight: 700;
   font-size: 24px;
   line-height: 32px;
-  /* identical to box height, or 133% */
   padding-bottom: 16px;
-
-
   color: #000000;
 
 }
@@ -32,9 +29,6 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
-  /* or 143% */
-
-
 }
 
 .image-container {
@@ -63,8 +57,6 @@
   font-weight: 600;
   font-size: 18px;
   line-height: 24px;
-  /* identical to box height, or 133% */
-
   display: flex;
   align-items: flex-end;
   padding-bottom: 12px;

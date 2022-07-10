@@ -1,12 +1,10 @@
 <div class="paginate">
   <ul class="pagination">
     <li class="pagination-button"
-        *ngFor="let page of pageArray"
-        >
-      <a [routerLink]="['pages/',page]" routerLinkActive="active"
-      >{{page}}
+        *ngFor="let page of pageArray; let i =index">
+      <a [routerLink]="['pages/',i+1]" routerLinkActive="active"
+      >{{i+1}}
       </a>
     </li>
   </ul>
 </div>
-<!--(click)="changePage(page)"-->

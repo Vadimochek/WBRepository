@@ -1,6 +1,7 @@
 .book-page{
   width: 842px;
-  background: #efeaea;
+  margin: 20px 0 0 300px;
+  background: #f3f2f2;
   display: grid;
   gap: 0;
   grid-template-areas:
@@ -9,7 +10,8 @@
     "content content"
     "pagination pagination";
   grid-template-rows: auto 1fr 1fr auto;
-
+  border: #b4b5b6 solid 1px;
+  border-radius: 1%;
 }
 
 .book-content{
