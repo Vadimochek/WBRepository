@@ -1,0 +1,20 @@
+.header{
+  top: 0;
+  width: 100%;
+  position: fixed;
+  background: #333;
+  padding: 5px 0;
+  color: #fff;
+}
+.container{
+  width: 80%;
+  margin: 0 auto;
+}
+nav a{
+  color: #fff;
+  padding: 3px 25px;
+  display: inline-block;
+}
+nav a.active {
+  color: #8F07CF;
+}

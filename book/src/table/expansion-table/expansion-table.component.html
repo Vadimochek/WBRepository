@@ -1,0 +1,51 @@
+<table mat-table
+       [dataSource]="dataSource" matSort
+       multiTemplateDataRows
+       class="mat-elevation-z8">
+  <ng-container matColumnDef="{{column}}" *ngFor="let column of columnsToDisplay">
+    <th mat-header-cell  *matHeaderCellDef mat-sort-header> {{column}} </th>
+    <td mat-cell *matCellDef="let element"> {{element[column]}} </td>
+  </ng-container>
+  <ng-container matColumnDef="expand">
+    <th mat-header-cell  *matHeaderCellDef aria-label="row actions">&nbsp;</th>
+    <td mat-cell *matCellDef="let element">
+    </td>
+  </ng-container>
+
+
+  <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
+  <ng-container matColumnDef="expandedDetail">
+        <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplayWithExpand.length">
+          <div class="example-element-detail" [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+            <div>Элемент в параллельном мире "ЧПМБИ-1"</div>
+            <table class="expand-table" cellspacing="0">
+              <tr>
+              <th>Позиция в другом измерени</th>
+              <th>Имя (Такое же)</th>
+              <th>Тяжесть в другом измерении</th>
+              <th>В параллельном мире это вообще газ?</th>
+              </tr>
+              <tr>
+                <td>{{extendedData[element.position-1].position}}</td>
+                <td>{{element.name || extendedData[element.position-1].name}}</td>
+                <td>{{extendedData[element.position-1].weight}}</td>
+                <td>{{extendedData[element.position-1].displayedInCell}}</td>
+              </tr>
+            </table>
+        </div>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="columnsToDisplayWithExpand" ></tr>
+  <tr mat-row *matRowDef="let element; columns: columnsToDisplayWithExpand;"
+      class="example-element-row"
+      [class.example-expanded-row]="expandedElement === element"
+      (click)="expandedElement = expandedElement === element ? null : element">
+  </tr>
+  <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+</table>
+
+<div>
+<button mat-raised-button (click)="addData()" class="demo-button">
+  Новый сет данных
+</button>
+</div>

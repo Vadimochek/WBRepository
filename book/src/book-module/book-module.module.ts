@@ -20,8 +20,8 @@ const routes: Routes = [
       },
       {path: '', redirectTo: "pages", pathMatch: "full"},
     ]},
-  {path: '', redirectTo: 'book', pathMatch: "full"},
-  {path: '**', component: NotFoundComponent}
+  // {path: '', redirectTo: 'book', pathMatch: "full"},
+  // {path: '**', component: NotFoundComponent}
 ]
 
 @NgModule({

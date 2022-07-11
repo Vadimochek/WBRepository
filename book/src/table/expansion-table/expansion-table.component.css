@@ -1,0 +1,58 @@
+table {
+  width: 80%;
+  margin: 40px auto;
+  border: 2px solid #2d2d2d;
+}
+
+tr.example-detail-row {
+  height: 0;
+}
+
+tr.example-element-row:not(.example-expanded-row):hover {
+  background: #777575;
+}
+
+
+
+.example-element-row td {
+  border-bottom-width: 0;
+}
+
+.example-element-detail {
+  overflow: hidden;
+  display: flex;
+}
+
+
+
+.example-element-symbol {
+  font-weight: bold;
+  font-size: 40px;
+  line-height: normal;
+}
+
+.example-element-description {
+  padding: 16px;
+}
+
+.example-element-description-attribution {
+  opacity: 0.5;
+}
+
+.demo-button + .demo-button {
+  margin-left: 8px;
+}
+
+.expand-table {
+  text-align: center;
+
+}
+.expand-table td {
+  border: 1px solid grey;
+  padding: 10px;
+}
+/* границы ячеек тела таблицы */
+.expand-table th {
+  border: 1px solid grey;
+  padding: 10px;
+}
