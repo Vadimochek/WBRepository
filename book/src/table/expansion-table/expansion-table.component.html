@@ -17,10 +17,9 @@
   <ng-container matColumnDef="expandedDetail">
         <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplayWithExpand.length">
           <div class="example-element-detail" [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
-            <div>Элемент в параллельном мире "ЧПМБИ-1"</div>
             <table class="expand-table" cellspacing="0">
               <tr>
-              <th>Позиция в другом измерени</th>
+              <th>Позиция в другом измерении</th>
               <th>Имя (Такое же)</th>
               <th>Тяжесть в другом измерении</th>
               <th>В параллельном мире это вообще газ?</th>
