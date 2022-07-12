@@ -7,6 +7,7 @@ import {MatTableModule} from "@angular/material/table";
 import {MatButtonModule} from "@angular/material/button";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSortModule} from "@angular/material/sort";
+import {MatFormFieldModule} from "@angular/material/form-field";
 
 const routes: Routes = [
   {path: 'table', component: ExpansionTableComponent},
@@ -18,15 +19,16 @@ const routes: Routes = [
   declarations: [
     ExpansionTableComponent
   ],
-  imports: [
-    CommonModule,
-    [RouterModule.forChild(routes)],
+    imports: [
+        CommonModule,
+        [RouterModule.forChild(routes)],
 
-    BrowserAnimationsModule,
-    MatTableModule,
-    MatSortModule,
-    MatButtonModule
-  ],
+        BrowserAnimationsModule,
+        MatTableModule,
+        MatSortModule,
+        MatButtonModule,
+        MatFormFieldModule
+    ],
   bootstrap: [ExpansionTableComponent]
 })
 export class TableModule { }

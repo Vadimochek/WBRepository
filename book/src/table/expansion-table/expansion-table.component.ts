@@ -1,30 +1,37 @@
-import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, ChangeDetectorRef, Component, OnInit, QueryList, ViewChild, ViewChildren} from '@angular/core';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import {MatSort, Sort} from '@angular/material/sort';
 import {LiveAnnouncer} from "@angular/cdk/a11y";
 import {MatTable, MatTableDataSource} from '@angular/material/table';
+import {CdkTableDataSourceInput} from "@angular/cdk/table";
 
 export interface PeriodicElement {
   position: number;
   name: string;
   weight: number;
   symbol: string;
-  extended?: Object;
+  extended?: Extend[];
+}
+
+export interface Extend {
+  position: number;
+  name: string;
+  weight: number;
+  displayedInCell: string
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', },
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He', },
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li', },
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be', },
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B', },
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C', },
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N', },
+  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H',},
+  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He',},
+  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li',},
+  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be',},
+  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B',},
+  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C',},
+  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N',},
   {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
   {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
   {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
 ]
-
 
 
 @Component({
@@ -55,28 +62,31 @@ export class ExpansionTableComponent implements AfterViewInit {
   ]
 
   dataSource = new MatTableDataSource<PeriodicElement>;
+  dataSource2 = new MatTableDataSource<Extend>;
+  innerDisplayedColumns = ["position", "name", "weight", "displayedInCell"]
+
   columnsToDisplay = ["name", 'weight', 'symbol', 'position'];
   columnsToDisplayWithExpand = [...this.columnsToDisplay, 'expand'];
   expandedElement: PeriodicElement | null | undefined;
+
   constructor() {
-    ELEMENT_DATA.forEach(el =>  {  el.extended = this.extendedData} )
+    ELEMENT_DATA.forEach(el => {
+      el.extended = this.extendedData
+    })
     this.dataSource = new MatTableDataSource(ELEMENT_DATA);
+    this.dataSource2 = new MatTableDataSource(this.extendedData);
   }
 
   @ViewChild(MatSort) sort: MatSort;
-  @ViewChild(MatTable) table: MatTable<PeriodicElement>;
+  @ViewChild('innerSort') innerSort: MatSort;
 
   addData() {
     const randomElementIndex = Math.floor(Math.random() * ELEMENT_DATA.length);
     ELEMENT_DATA.push(ELEMENT_DATA[randomElementIndex])
-    this.dataSource.data = ELEMENT_DATA;
+    this.dataSource.data = ELEMENT_DATA
   }
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
+    this.dataSource2.sort = this.innerSort;
   }
-
-
-
 }
-
-
