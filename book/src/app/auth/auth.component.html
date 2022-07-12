@@ -1,0 +1,26 @@
+<div class="form-back">
+  <div class="registration-window" *ngIf="changeForm('register')" >
+    <div class="form-window-headText">
+      <h1>Регистрация</h1>
+      <p>Уже есть аккаунт ? <a routerLink="../auth"> Войти </a></p>
+    </div>
+    <form class="form-window-fields">
+      <input class="form-input" placeholder="Name" type="text">
+      <input class="form-input" placeholder="Email" type="email">
+      <input class="form-input" placeholder="Password" type="password">
+      <button class="form-window-button">Создать аккаунт</button>
+    </form>
+  </div>
+
+  <div class="auth-window" *ngIf="changeForm('auth')">
+    <div class="form-window-headText">
+      <h1>Авторизация</h1>
+      <p>Ещё нет аккаунта? <a routerLink="../register"> Зарегистрироваться </a></p>
+    </div>
+    <form class="form-window-fields">
+      <input class="form-input" placeholder="Email" type="email">
+      <input class="form-input" placeholder="Password" type="password">
+      <button class="form-window-button">Войти</button>
+    </form>
+  </div>
+</div>

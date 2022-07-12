@@ -1,0 +1,102 @@
+
+.form-back{
+  position: absolute;
+  width: 1312px;
+  height: 800px;
+  left: 270px;
+  top: 100px;
+  background: url("../../assets/leaves.png");
+  box-shadow: 0px 0px 80px 34px rgba(0, 0, 0, 0.25);
+  border-radius: 70px;
+}
+
+.auth-window, .registration-window{
+  box-sizing: border-box;
+  position: absolute;
+  width: 500px;
+  height: 650px;
+  left: 62px;
+  top: 64px;
+  background: linear-gradient(145.36deg, rgba(244, 244, 244, 0.4) -4.23%, rgba(244, 244, 244, 0.2) 102.58%);
+  backdrop-filter: blur(20px);
+  border-radius: 50px;
+  text-align: center;
+}
+
+.form-window-headText{
+  padding-top: 56px;
+  font-family: 'Poppins';
+  font-style: normal;
+  color: #FFFFFF;
+
+}
+.form-window-headText h1{
+  font-weight: 500;
+  font-size: 52px;
+  line-height: 78px;
+  padding-bottom: 0;
+  margin: 0;
+}
+.form-window-headText p{
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  padding-bottom: 40px;
+
+}
+
+
+.form-input{
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  /*line-height: 27px;*/
+
+  color: #FFFFFF;
+  width: 350px;
+  height: 40px;
+  border: 0;
+  border-bottom: 2px solid #F4F4F4;
+  background: transparent;
+  padding: 5px 0;
+  margin-bottom: 30px;
+  outline:none;
+}
+input::placeholder {
+  transform: translateY(-19px);
+
+}
+
+input::placeholder {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  color: #FFFFFF;
+
+}
+
+
+
+.form-window-button{
+  width: 290px;
+  height: 50px;
+  margin: 46px;
+  background: #62FFB4;
+  border-radius: 10px;
+  border: 0;
+
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+
+  color: #696969;
+}
+
+a {
+  color: #62FFB4;
+  text-decoration: none
+}
+
