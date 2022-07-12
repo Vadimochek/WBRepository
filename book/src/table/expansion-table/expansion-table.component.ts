@@ -9,6 +9,7 @@ export interface PeriodicElement {
   name: string;
   weight: number;
   symbol: string;
+  extended?: Object;
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
@@ -39,6 +40,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   ],
 })
 export class ExpansionTableComponent implements AfterViewInit {
+
   extendedData = [
     {position: 24, name: 'ElementName', weight: 881.9950604495106, displayedInCell: 'Is not gas'},
     {position: 18, name: 'ElementName', weight: 797.1882834817152, displayedInCell: 'Is not gas'},
@@ -56,7 +58,10 @@ export class ExpansionTableComponent implements AfterViewInit {
   columnsToDisplay = ["name", 'weight', 'symbol', 'position'];
   columnsToDisplayWithExpand = [...this.columnsToDisplay, 'expand'];
   expandedElement: PeriodicElement | null | undefined;
-  constructor() {this.dataSource = new MatTableDataSource(ELEMENT_DATA);}
+  constructor() {
+    ELEMENT_DATA.forEach(el =>  {  el.extended = this.extendedData} )
+    this.dataSource = new MatTableDataSource(ELEMENT_DATA);
+  }
 
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatTable) table: MatTable<PeriodicElement>;

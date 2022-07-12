@@ -57,8 +57,3 @@ tr.example-element-row:not(.example-expanded-row):hover {
   padding: 10px;
   border: 1px solid black;
 }
-
-td {
-  padding-left: 0;
-  padding-right: 0;
-}
