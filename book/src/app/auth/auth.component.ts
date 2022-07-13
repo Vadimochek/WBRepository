@@ -46,11 +46,12 @@ export class AuthComponent implements OnInit {
     console.log(structureData)
     this.formAuthReg.reset();
 
-    this.authService.get('https://ya.ru/').subscribe(() => {
-        console.log("Всё клубнично")
-      },
-      () => {
-        console.log("Что-то пошло не так(((((")
-      })
+    let httpRespone = this.authService.get('https://ya.ru/')
+    console.log(httpRespone.subscribe(() => {
+          console.log("Всё клубнично")
+        },
+        () => {
+          console.log("Что-то пошло не так(((((")
+        }))
   }
 }

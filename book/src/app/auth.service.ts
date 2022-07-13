@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +9,8 @@ export class AuthService {
   constructor(private http: HttpClient) {
   }
 
-  public get(url: string): Observable<any>{
+  public get(url: string){
     return this.http.get(url);
   }
+
 }
