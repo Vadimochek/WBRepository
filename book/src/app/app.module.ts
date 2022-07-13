@@ -8,6 +8,7 @@ import {RouterModule, Routes} from "@angular/router";
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {TableModule} from "../table/table.module";
 import { AuthComponent } from './auth/auth.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 const routes: Routes = [
@@ -27,13 +28,14 @@ const routes: Routes = [
     AppComponent,
     AuthComponent,
   ],
-  imports: [
-    BrowserModule,
-    BookModuleModule,
-    [RouterModule.forRoot(routes)],
-    NoopAnimationsModule,
-    TableModule,
-  ],
+    imports: [
+        BrowserModule,
+        BookModuleModule,
+        [RouterModule.forRoot(routes)],
+        NoopAnimationsModule,
+        TableModule,
+        ReactiveFormsModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -100,3 +100,7 @@ a {
   text-decoration: none
 }
 
+button:disabled {
+  background: #ff6464;
+}
+
