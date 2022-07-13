@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {AuthService} from "../auth.service";
 
 
 interface authUser {
@@ -12,7 +13,8 @@ interface authUser {
 @Component({
   selector: 'app-auth',
   templateUrl: './auth.component.html',
-  styleUrls: ['./auth.component.css']
+  styleUrls: ['./auth.component.css'],
+  providers: [AuthService]
 })
 export class AuthComponent implements OnInit {
 
@@ -22,7 +24,7 @@ export class AuthComponent implements OnInit {
     password: new FormControl("", [Validators.required, Validators.minLength(6)])
   })
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute, private authService: AuthService) {
   }
 
   ngOnInit(): void {
@@ -42,6 +44,13 @@ export class AuthComponent implements OnInit {
       delete structureData.name
     }
     console.log(structureData)
-    this.formAuthReg.reset()
+    this.formAuthReg.reset();
+
+    this.authService.get('https://ya.ru/').subscribe(() => {
+        console.log("Всё клубнично")
+      },
+      () => {
+        console.log("Что-то пошло не так(((((")
+      })
   }
 }

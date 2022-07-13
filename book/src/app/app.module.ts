@@ -7,8 +7,10 @@ import {BookModuleModule} from "../book-module/book-module.module";
 import {RouterModule, Routes} from "@angular/router";
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {TableModule} from "../table/table.module";
-import { AuthComponent } from './auth/auth.component';
+import {AuthComponent} from './auth/auth.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {AuthService} from "./auth.service";
 
 
 const routes: Routes = [
@@ -28,14 +30,15 @@ const routes: Routes = [
     AppComponent,
     AuthComponent,
   ],
-    imports: [
-        BrowserModule,
-        BookModuleModule,
-        [RouterModule.forRoot(routes)],
-        NoopAnimationsModule,
-        TableModule,
-        ReactiveFormsModule,
-    ],
+  imports: [
+    BrowserModule,
+    BookModuleModule,
+    [RouterModule.forRoot(routes)],
+    NoopAnimationsModule,
+    TableModule,
+    ReactiveFormsModule,
+    HttpClientModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

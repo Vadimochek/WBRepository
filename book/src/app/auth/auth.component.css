@@ -101,6 +101,7 @@ a {
 }
 
 button:disabled {
-  background: #ff6464;
+  background: #838383;
+  color: #000000;
 }
 
