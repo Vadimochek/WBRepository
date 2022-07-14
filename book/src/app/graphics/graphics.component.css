@@ -1,0 +1,21 @@
+button {
+  width: 50px;
+  height: 50px;
+}
+div {
+  padding-top: 20px;
+  font-size: 40px;
+}
+
+.charts {
+  display: flex;
+}
+.lineChart {
+  width: 1200px;
+
+}
+
+.pieChart {
+  width: 600px;
+
+}

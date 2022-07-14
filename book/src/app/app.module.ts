@@ -11,6 +11,7 @@ import {AuthComponent} from './auth/auth.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {AuthService} from "./auth.service";
+import { GraphicsComponent } from './graphics/graphics.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,7 @@ const routes: Routes = [
   },
   {path: 'auth', component: AuthComponent},
   {path: 'register', component: AuthComponent},
+  {path: 'graphics', component: GraphicsComponent}
 
 ]
 
@@ -29,6 +31,7 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     AuthComponent,
+    GraphicsComponent,
   ],
   imports: [
     BrowserModule,
