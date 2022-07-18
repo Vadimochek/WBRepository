@@ -14,6 +14,9 @@ interface GraphicData {
   qty_shk_cat4: number
 }
 
+export interface ReceivedData {
+  data: GraphicData[]
+}
 
 @Component({
   selector: 'app-graphics',
@@ -39,7 +42,7 @@ export class GraphicsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.graphicService.get("https://jsonproject-53629-default-rtdb.firebaseio.com/get-assembly.json").subscribe((value: any) => {
+    this.graphicService.get("https://jsonproject-53629-default-rtdb.firebaseio.com/get-assembly.json").subscribe((value: ReceivedData) => {
         this.graphicData = value.data;
       },
       error => {

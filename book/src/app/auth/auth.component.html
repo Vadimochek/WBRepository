@@ -1,27 +1,31 @@
-<div class="form-back">
-  <div class="registration-window" *ngIf="changeForm('register')" >
-    <div class="form-window-headText">
-      <h1>Регистрация</h1>
-      <p>Уже есть аккаунт ? <a routerLink="../auth"> Войти </a></p>
+<div class="green-back">
+  <div class="form-back">
+    <div class="registration-window" *ngIf="changeForm('register')">
+      <div class="form-window-headText">
+        <h1>Регистрация</h1>
+        <p>Уже есть аккаунт ? <a routerLink="../auth"> Войти </a></p>
+      </div>
+      <form [formGroup]="formAuthReg">
+        <input class="form-input" placeholder="Name" type="text" required formControlName="name">
+        <input class="form-input" placeholder="Email" type="email" formControlName="email">
+        <input class="form-input" placeholder="Password" type="password" formControlName="password">
+        <button class="form-window-button" (click)="authReg()" [disabled]="formAuthReg.invalid">Создать
+          аккаунт
+        </button>
+      </form>
     </div>
-    <form [formGroup]="formAuthReg">
-      <input class="form-input" placeholder="Name" type="text" required formControlName="name">
-      <input class="form-input" placeholder="Email" type="email" formControlName="email">
-      <input class="form-input" placeholder="Password" type="password" formControlName="password">
-      <button class="form-window-button" (click)="sendDatatoServer()" [disabled]="formAuthReg.invalid">Создать аккаунт</button>
-    </form>
-  </div>
 
-  <div class="auth-window" *ngIf="changeForm('auth')">
-    <div class="form-window-headText">
-      <h1>Авторизация</h1>
-      <p>Ещё нет аккаунта? <a routerLink="../register"> Зарегистрироваться </a></p>
+    <div class="auth-window" *ngIf="changeForm('auth')">
+      <div class="form-window-headText">
+        <h1>Авторизация</h1>
+        <p>Ещё нет аккаунта? <a routerLink="../register"> Зарегистрироваться </a></p>
+      </div>
+      <form [formGroup]="formAuthReg">
+        <input class="form-input" placeholder="Email" type="email" formControlName="email">
+        <input class="form-input" placeholder="Password" type="password" formControlName="password">
+        <div></div>
+        <button class="form-window-button" (click)="authReg()" [disabled]="formAuthReg.invalid">Войти</button>
+      </form>
     </div>
-    <form [formGroup]="formAuthReg">
-      <input class="form-input" placeholder="Email" type="email" formControlName="email">
-      <input class="form-input" placeholder="Password" type="password" formControlName="password">
-      <div></div>
-      <button class="form-window-button" (click)="sendDatatoServer()" [disabled]="formAuthReg.invalid">Войти</button>
-    </form>
   </div>
 </div>

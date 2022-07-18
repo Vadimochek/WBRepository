@@ -4,6 +4,9 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {AuthService} from "../auth.service";
 
 
+
+
+
 interface authUser {
   email: string;
   password: string;
@@ -34,7 +37,7 @@ export class AuthComponent implements OnInit {
     return this.route.snapshot.url.toString() === url
   }
 
-  sendDatatoServer() {
+  authReg() {
     const structureData: authUser = {
       email: this.formAuthReg.getRawValue().email,
       password: this.formAuthReg.getRawValue().password,
@@ -43,15 +46,14 @@ export class AuthComponent implements OnInit {
     if (!structureData.name) {
       delete structureData.name
     }
-    console.log(structureData)
+
+    if (this.route.snapshot.url.toString() === 'auth') {
+      this.authService.login(structureData.email, structureData.password)
+    }
+    else {
+      this.authService.signUp(structureData.email, structureData.password, structureData.name)
+    }
     this.formAuthReg.reset();
 
-    let httpRespone = this.authService.get('https://ya.ru/')
-    console.log(httpRespone.subscribe(() => {
-          console.log("Всё клубнично")
-        },
-        () => {
-          console.log("Что-то пошло не так(((((")
-        }))
   }
 }

@@ -12,6 +12,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {AuthService} from "./auth.service";
 import { GraphicsComponent } from './graphics/graphics.component';
+import {AuthGuard} from "./auth.guard";
 
 
 const routes: Routes = [
@@ -21,9 +22,10 @@ const routes: Routes = [
   {
     path: 'table', loadChildren: () => import('../table/table.module').then(m => m.TableModule)
   },
+  {path: '', redirectTo: "auth", pathMatch: "full"},
   {path: 'auth', component: AuthComponent},
   {path: 'register', component: AuthComponent},
-  {path: 'graphics', component: GraphicsComponent}
+  {path: 'graphics', component: GraphicsComponent, canActivate: [AuthGuard]}
 
 ]
 

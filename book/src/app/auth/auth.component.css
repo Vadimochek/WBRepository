@@ -1,5 +1,6 @@
-body{
-  background: green;
+.green-back{
+  background-color: #4CAB72;
+  height: 950px;
 }
 
 .form-back{
