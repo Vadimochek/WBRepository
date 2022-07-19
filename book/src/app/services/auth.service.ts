@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core';
 
 
-import {getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, connectAuthEmulator} from "firebase/auth";
+import {getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, connectAuthEmulator, } from "firebase/auth";
 import {initializeApp} from "firebase/app";
-import firebase from "firebase/compat";
+import {ActivatedRoute, Route, Router} from "@angular/router";
 
 
 const firebaseConfig = {
@@ -27,7 +27,7 @@ connectAuthEmulator(auth, "http://localhost:9099")
 })
 export class AuthService {
 
-  constructor() {
+  constructor(private route: Router) {
   }
 
   login(email: string, password: string) {
@@ -35,6 +35,7 @@ export class AuthService {
       .then((userCredential) => {
         const user = userCredential.user;
         console.log("Успешный вход")
+        this.route.navigate(['book'])
       })
       .catch((error) => {
         console.log(error)
@@ -46,6 +47,7 @@ export class AuthService {
       .then((userCredential) => {
         const user = userCredential.user;
         console.log("Успешная регистрация")
+        this.route.navigate(['auth'])
       })
       .catch((error) => {
         console.log(error)

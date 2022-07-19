@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {ReceivedData} from "./graphics/graphics.component";
+import {ReceivedData} from "../graphics/graphics.component";
 
 @Injectable({
   providedIn: 'root'

@@ -1,9 +1,11 @@
-<!--<div class="header">-->
-<!--  <div class="container">-->
-<!--    <nav>-->
-<!--      <a routerLink="book" routerLinkActive="active"> BOOK </a>-->
-<!--      <a routerLink="table" routerLinkActive="active"> TABLE </a>-->
-<!--    </nav>-->
-<!--  </div>-->
-<!--</div>-->
+<div class="header" *ngIf="true">
+  <div class="container">
+    <nav>
+      <a routerLink="book" routerLinkActive="active"> BOOK </a>
+      <a routerLink="table" routerLinkActive="active"> TABLE </a>
+      <a routerLink="charts" routerLinkActive="active"> CHARTS </a>
+      <a routerLink="auth" routerLinkActive="active"> SIGN IN </a>
+    </nav>
+  </div>
+</div>
 <router-outlet></router-outlet>

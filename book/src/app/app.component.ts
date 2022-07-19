@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
 
 
 
@@ -9,4 +10,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+  constructor(private router: ActivatedRoute) {
+  }
+
+  // correctUrl() {
+  //   return this.router.snapshot.url.toString() == "auth"
+  // }
 }

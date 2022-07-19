@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import {GraphicService} from "../graphic.service";
+import {GraphicService} from "../services/graphic.service";
 import Chart, {ChartData} from "chart.js/auto";
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 

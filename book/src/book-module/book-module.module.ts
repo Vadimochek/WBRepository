@@ -11,9 +11,10 @@ import {FifthPageComponent} from "./book/fifth-page/fifth-page.component";
 import {RouterModule, Routes} from "@angular/router";
 import {NotFoundComponent} from "./not-found/not-found.component";
 import {pageRoutes} from './routes'
+import {AuthGuard} from "../app/guards/auth.guard";
 
 const routes: Routes = [
-  {path: 'book', component: BookComponent, children: [
+  {path: 'book', component: BookComponent, canActivate: [AuthGuard], children: [
       {path: 'pages', children:
           [...pageRoutes,
             {path: '', redirectTo: "1", pathMatch: "full"}]
