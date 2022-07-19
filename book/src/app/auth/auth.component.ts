@@ -56,4 +56,7 @@ export class AuthComponent implements OnInit {
     this.formAuthReg.reset();
 
   }
+  authGoogleButton() {
+    this.authService.googleSign()
+  }
 }

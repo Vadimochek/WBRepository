@@ -1,0 +1,14 @@
+[debug] [2022-07-19T14:54:59.990Z] ----------------------------------------------------------------------
+[debug] [2022-07-19T14:54:59.993Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Vadim.DESKTOP-MKPOMPM\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js emulators:start --only auth --project fir-auth-93a4f
+[debug] [2022-07-19T14:54:59.994Z] CLI Version:   11.2.2
+[debug] [2022-07-19T14:54:59.994Z] Platform:      win32
+[debug] [2022-07-19T14:54:59.995Z] Node Version:  v16.14.0
+[debug] [2022-07-19T14:54:59.996Z] Time:          Tue Jul 19 2022 17:54:59 GMT+0300 (Москва, стандартное время)
+[debug] [2022-07-19T14:54:59.996Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-07-19T14:55:00.013Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] Failed to authenticate, have you run firebase login?
+[warn] !  emulators: You are not currently authenticated so some features may not work correctly. Please run firebase login to authenticate the CLI. 
+[warn] !  Could not find config (firebase.json) so using defaults. 
+[info] i  emulators: Starting emulators: auth {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: auth"}}
+[debug] [2022-07-19T14:55:00.091Z] [hub] writing locator at C:\Users\VADIM~1.DES\AppData\Local\Temp\hub-fir-auth-93a4f.json

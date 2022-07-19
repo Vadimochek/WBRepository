@@ -26,6 +26,12 @@
         <div></div>
         <button class="form-window-button" (click)="authReg()" [disabled]="formAuthReg.invalid">Войти</button>
       </form>
+      <div class="separator">Or Sign Up with</div>
+      <div>
+        <a>
+        <img class="googleSign" src="../../assets/google-text-logo.png" (click)="authGoogleButton()">
+        </a>
+      </div>
     </div>
   </div>
 </div>

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {
   ActivatedRoute,
   ActivatedRouteSnapshot,
@@ -9,7 +9,7 @@ import {
 } from '@angular/router';
 import {first, map, Observable, of} from 'rxjs';
 import {TokenService} from "../services/token.service";
-import { ToastrService } from 'ngx-toastr';
+import {ToastrService} from 'ngx-toastr';
 
 @Injectable({
   providedIn: 'root',
@@ -22,7 +22,8 @@ export class TokenGuard implements CanActivate {
   constructor(
     private tokenService: TokenService,
     private toastr: ToastrService,
-  ) {}
+  ) {
+  }
 
   canActivate(
     route: ActivatedRouteSnapshot,
@@ -31,21 +32,21 @@ export class TokenGuard implements CanActivate {
   }
 
   //https://fir-auth-93a4f-default-rtdb.europe-west1.firebasedatabase.app/access-rights.json
-  getAccess(token: string, url: string){
+  //https://fir-auth-93a4f-default-rtdb.europe-west1.firebasedatabase.app/access-rights-full.json
+  getAccess(token: string, url: string) {
 
-      return this.tokenService
-        .getTokensArray("https://fir-auth-93a4f-default-rtdb.europe-west1.firebasedatabase.app/access-rights.json")
-        .pipe(
-          first(),
-          map(value => {
-            if (!value.data.includes(token)) {
-              this.toastr.error("Нет прав к странице "+url, "Отказано в доступе")
-              return false
-            }
-            else {
-              return true
-            }
-          }))
+    return this.tokenService
+      .getTokensArray("https://fir-auth-93a4f-default-rtdb.europe-west1.firebasedatabase.app/access-rights-full.json")
+      .pipe(
+        first(),
+        map(value => {
+          if (!value.data.includes(token)) {
+            this.toastr.error("Нет доступа к странице " + url, "Отказано в доступе")
+            return false
+          } else {
+            return true
+          }
+        }))
   }
 
 }

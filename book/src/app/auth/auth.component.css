@@ -109,3 +109,40 @@ button:disabled {
   color: #000000;
 }
 
+.googleSign {
+  height: 40px;
+  width: 40px;
+  border-radius: 30%;
+  border: #F2F2F2;
+  background: url("../../assets/google-text-logo.png");
+  object-fit: fill;
+  padding: 5px;
+}
+
+
+.separator {
+  display: flex;
+  width: 360px;
+  margin: auto;
+  align-items: center;
+  text-align: center;
+  color: #F2F2F2;
+  padding-bottom: 20px;
+
+}
+
+.separator::before,
+.separator::after {
+  content: '';
+  flex: 1;
+  border-bottom: 3px solid #ffffff;
+}
+
+.separator:not(:empty)::before {
+  margin-right: .5em;
+}
+
+.separator:not(:empty)::after {
+  margin-left: .5em;
+}
+

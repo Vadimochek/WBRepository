@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-
+import { getAuth, signOut} from "firebase/auth"
 
 
 @Component({
@@ -14,7 +14,8 @@ export class AppComponent {
   constructor(private router: ActivatedRoute) {
   }
 
-  // correctUrl() {
-  //   return this.router.snapshot.url.toString() == "auth"
-  // }
+  logOut() {
+    const auth = getAuth()
+    signOut(auth).then(() => console.log("Выход из профиля"))
+  }
 }
